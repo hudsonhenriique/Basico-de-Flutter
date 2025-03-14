@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
       home: ListaContatos(
         contatos: [
@@ -44,26 +44,29 @@ class ListaContatos extends StatelessWidget {
         centerTitle: true,
         leading: Icon(Icons.contact_phone),
       ),
-
       body: ListView.builder(
-        itemBuilder:
-            (context, index) => ListTile(
-              title: Text(contatos[index]),
-              leading: Icon(Icons.person),
-              trailing: Container(
-                width: 60,
-                child: Row(
-                  children: [
-                    Icon(Icons.edit),
-                    SizedBox(width: 6),
-                    Icon(Icons.delete),
-                  ],
-                ),
-              ),
-              // subtitle: Text('Telefone: 123456789'),
-            ),
-
+        itemBuilder: (context, index) => LinhaContato(contato: contatos[index]),
         itemCount: contatos.length,
+      ),
+    );
+  }
+}
+
+class LinhaContato extends StatelessWidget {
+  const LinhaContato({required this.contato});
+
+  final String contato;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(contato),
+      leading: Icon(Icons.person),
+      trailing: Container(
+        width: 60,
+        child: Row(
+          children: [Icon(Icons.edit), SizedBox(width: 6), Icon(Icons.delete)],
+        ),
       ),
     );
   }
