@@ -46,9 +46,9 @@ Este repositório contém o código de um projeto básico desenvolvido com **Flu
 
 ## 📈 Melhorias Futuras
 
-- Adicionar mais telas e funcionalidades interativas
-- Integrar com APIs para obter dados dinâmicos
-- Implementar animações e transições de tela
+- [ ] Adicionar mais telas e funcionalidades interativas
+- [ ] Integrar com APIs para obter dados dinâmicos
+- [ ] Implementar animações e transições de tela
 
 ---
 
